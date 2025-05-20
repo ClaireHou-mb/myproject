@@ -127,7 +127,7 @@
         }
 
         th, td {
-            border: 1px solid #ddd;
+            border: 1px solid #555; /* Uniform dark gray border for all cells */
             padding: 12px; 
             text-align: center; 
             vertical-align: middle; 
@@ -169,9 +169,7 @@
             font-weight: bold; 
         }
         
-        .objective-divider-right {
-            border-right: 2px solid #555 !important; 
-        }
+        /* .objective-divider-right class is removed as all borders are uniform now */
 
 
         #footnote-container {
@@ -287,7 +285,7 @@
 'Sierra','Findability & Facilitation','Store Traffic','Store Visits','2M+ per Week','Cost per Store Visit','Branded Search Trends'
 'Sierra','Findability & Facilitation','Online Traffic','Site Visits','10M+ per Week','Cost per Site Visit','Site Analytics Pageviews'`;
 
-        // Data sources CSV string - UPDATED
+        // Data sources CSV string
         const dataSourcesCsvString = `'Metric','Data Source'
 'Ad Awareness','Brand Lift Study/YouGov'
 'Unaided Brand Awareness','Brand Lift Study/YouGov'
@@ -669,9 +667,7 @@
                 td.innerHTML = getMetricHTMLWithFootnote(currentValue, dataSourcesMap, dataSourceToNumberMap, footnoteItems, nextFootnoteNumberRef);
                 td.colSpan = count;
                 
-                // applyDarkBorderToLast is a boolean indicating if the *objective group* this buffer belongs to is the last one.
-                // The border should be applied if this cell is the last for its buffer AND its objective group is NOT the overall last.
-                if (applyDarkBorderToLast) { // This means the objective group is NOT the overall last.
+                if (applyDarkBorderToLast) { 
                      td.classList.add('objective-divider-right');
                 }
                 trData.appendChild(td);
@@ -764,10 +760,11 @@
                         let currentGroupDisplayValue = null;
                         let currentGroupColspan = 0;
                         
-                        // Determine the distinct groups and their order based on finalColumns for the current row type (F&F or Objective)
                         let distinctGroupsInOrder = [];
+                        let groupIdentifier = labelName === "Fame & Flow" ? 'fameAndFlowValue' : 'objectiveName';
+                        
                         finalColumns.forEach(col => {
-                            const groupVal = labelName === "Fame & Flow" ? col.fameAndFlowValue : col.objectiveName;
+                            const groupVal = col[groupIdentifier];
                             if (distinctGroupsInOrder.length === 0 || distinctGroupsInOrder[distinctGroupsInOrder.length - 1] !== groupVal) {
                                 distinctGroupsInOrder.push(groupVal);
                             }
@@ -775,7 +772,7 @@
 
                         for (let i = 0; i < finalColumns.length; i++) {
                             const col = finalColumns[i];
-                            const colDisplayValue = labelName === "Fame & Flow" ? col.fameAndFlowValue : col.objectiveName;
+                            const colDisplayValue = col[groupIdentifier];
 
                             if (currentGroupDisplayValue === null) {
                                 currentGroupDisplayValue = colDisplayValue;
@@ -805,7 +802,6 @@
                                 currentGroupColspan = 1;
                             }
                         }
-                        // Append the last group
                         if (currentGroupDisplayValue !== null) {
                             const td = document.createElement('td');
                             td.textContent = currentGroupDisplayValue;
@@ -829,7 +825,6 @@
                         
                         const isLastKpiForThisObjective = (i === finalColumns.length - 1) || (finalColumns[i].objectiveName !== finalColumns[i+1].objectiveName);
                         
-                        // Determine if the current column's objective is the last distinct objective in the table
                         let distinctObjectivesInTableOrder = [];
                         finalColumns.forEach(fc => {if (!distinctObjectivesInTableOrder.includes(fc.objectiveName)) distinctObjectivesInTableOrder.push(fc.objectiveName);});
                         const isOverallLastObjectiveGroup = (distinctObjectivesInTableOrder.indexOf(col.objectiveName) === distinctObjectivesInTableOrder.length - 1);
@@ -839,7 +834,7 @@
                         }
                         trData.appendChild(td);
                     }
-                } else { // Optimization Proxy & Diagnostic Metric
+                } else { 
                     let dataKey = (labelName === "Optimization Proxy") ? "optimizationProxy" : "diagnosticMetric";
                     let currentObjectiveProcessing = null; 
                     let cellBufferForCurrentObjective = []; 
