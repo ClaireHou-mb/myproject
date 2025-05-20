@@ -141,18 +141,16 @@
         }
 
         thead th { 
-            /* Default thead th styling, specific rows will override */
             background-color: #e9ecef;
             font-weight: bold;
             color: #495057;
         }
         
-        .brand-header-cell { /* This class will be applied to the main brand header cell */
+        .brand-header-cell { 
             text-align: center !important; 
             font-size: 1.3em; 
             text-transform: uppercase;
             letter-spacing: 1px;
-            /* Background and color will be set by JS */
         }
 
         .metric-label { 
@@ -162,20 +160,17 @@
             text-align: left !important; 
         }
         
-        /* Styling for the first cell (empty) in the brand header row */
         thead tr:first-child th:first-child { 
-            background-color: #fff !important; /* Ensure it's white and overrides other th styles */
-            border: none !important; /* No border for the empty cell */
+            background-color: #fff !important; 
+            border: none !important; 
         }
 
-        /* Styling for cells in the Objective data row */
-        .objective-data-row td {
-            /* Background and color will be set by JS */
-            font-weight: bold; /* Make objective names in data row bold */
+        .fame-flow-data-row td, .objective-data-row td {
+            font-weight: bold; 
         }
         
         .objective-divider-right {
-            border-right: 2px solid #555 !important; /* Darker gray for objective separation */
+            border-right: 2px solid #555 !important; 
         }
 
 
@@ -254,46 +249,46 @@
 
 
         // Framework Data from CSV 
-        const frameworkCsvDataString = `Brand,Objective,Primary KPI,Benchmark,Optimization Proxy,Diagnostic & Monitoring Metric
-'Marshalls','TOMA','Ad Awareness','+6 to +12pp lift','Attention','Weekly Reach & Frequency'
-'Marshalls','TOMA','Unaided Brand Awareness','+1 to +4pp lift','Attention','N/A'
-'Marshalls','Brand Impact','Brand Consideraton','+4 to +8pp lift','Content/Site Engagement','N/A'
-'Marshalls','Brand Impact','Brand Favorability','+3 to +6pp lift','Content/Site Engagement','N/A'
-'Marshalls','Brand Impact','Perception Shift','+2 to +6pp lift','Content/Site Engagement','N/A'
-'Marshalls','Buzz & Cultural Impact','Brand Relevance','+3 to 6pp lift','Influencer Engagement','Social Conversation & Sentiment'
-'Marshalls','Buzz & Cultural Impact','Brand Relevance','+3 to 6pp lift','Organic Social Engagement','Social Conversation & Sentiment'
-'Marshalls','Customer Growth','New Customers/Loyalty Members','+3 to 5% Annual Growth','New Customer Files','Store Visits'
-'Marshalls','Market Share','Share Growth','+1 to 2% Annual Growth','Competitor Store Visits','Competitor Branded Search Volume'
-'Marshalls','Sales','Online & Offline Sales/ROAS','$3 to $8 Avg ROAS','Cost per Sale Conversion','Branded Search Trends'
-'Marshalls','Store Traffic','Store Visits','2M+ per Week','Cost per Store Visit','Branded Search Trends'
-'Marshalls','Online Traffic','Site Visits','10M+ per Week','Cost per Site Visit','Site Analytics Pageviews'
-'HomeGoods','TOMA','Ad Awareness','+6 to +12pp lift','Attention','Weekly Reach & Frequency'
-'HomeGoods','TOMA','Unaided Brand Awareness','+1 to +4pp lift','Attention','N/A'
-'HomeGoods','Brand Impact','Brand Consideraton','+4 to +8pp lift','Content/Site Engagement','N/A'
-'HomeGoods','Brand Impact','Brand Favorability','+3 to +6pp lift','Content/Site Engagement','N/A'
-'HomeGoods','Brand Impact','Perception Shift','+2 to +6pp lift','Content/Site Engagement','N/A'
-'HomeGoods','Buzz & Cultural Impact','Brand Relevance','+3 to 6pp lift','Influencer Engagement','Social Conversation & Sentiment'
-'HomeGoods','Buzz & Cultural Impact','Brand Relevance','+3 to 6pp lift','Organic Social Engagement','Social Conversation & Sentiment'
-'HomeGoods','Customer Growth','New Customers/Loyalty Members','+3 to 5% Annual Growth','New Customer Files','Store Visits'
-'HomeGoods','Market Share','Share Growth','+1 to 2% Annual Growth','Competitor Store Visits','Competitor Branded Search Volume'
-'HomeGoods','Sales','Online & Offline Sales/ROAS','$3 to $8 Avg ROAS','Cost per Sale Conversion','Branded Search Trends'
-'HomeGoods','Store Traffic','Store Visits','2M+ per Week','Cost per Store Visit','Branded Search Trends'
-'HomeGoods','Online Traffic','Site Visits','10M+ per Week','Cost per Site Visit','Site Analytics Pageviews'
-'Sierra','TOMA','Ad Awareness','+6 to +12pp lift','Attention','Weekly Reach & Frequency'
-'Sierra','TOMA','Unaided Brand Awareness','+1 to +4pp lift','Attention','N/A'
-'Sierra','Brand Impact','Brand Consideraton','+4 to +8pp lift','Content/Site Engagement','N/A'
-'Sierra','Brand Impact','Brand Favorability','+3 to +6pp lift','Content/Site Engagement','N/A'
-'Sierra','Brand Impact','Perception Shift','+2 to +6pp lift','Content/Site Engagement','N/A'
-'Sierra','Buzz & Cultural Impact','Brand Relevance','+3 to 6pp lift','Influencer Engagement','Social Conversation & Sentiment'
-'Sierra','Buzz & Cultural Impact','Brand Relevance','+3 to 6pp lift','Organic Social Engagement','Social Conversation & Sentiment'
-'Sierra','Customer Growth','New Customers/Loyalty Members','+3 to 5% Annual Growth','New Customer Files','Store Visits'
-'Sierra','Market Share','Share Growth','+1 to 2% Annual Growth','Competitor Store Visits','Competitor Branded Search Volume'
-'Sierra','Sales','Online & Offline Sales/ROAS','$3 to $8 Avg ROAS','Cost per Sale Conversion','Branded Search Trends'
-'Sierra','Store Traffic','Store Visits','2M+ per Week','Cost per Store Visit','Branded Search Trends'
-'HomeGoods','Online Traffic','Site Visits','10M+ per Week','Cost per Site Visit','Site Analytics Pageviews'`;
+        const frameworkCsvDataString = `'Brand','Fame & Flow','Objective','Primary KPI','Benchmark','Optimization Proxy','Diagnostic & Monitoring Metric'
+'Marshalls','Familiarity','TOMA','Ad Awareness','+6 to +12pp lift','Attention','Weekly Reach & Frequency'
+'Marshalls','Familiarity','TOMA','Unaided Brand Awareness','+1 to +4pp lift','Attention','N/A'
+'Marshalls','Favorability & Feeling','Brand Impact','Brand Consideraton','+4 to +8pp lift','Content/Site Engagement','N/A'
+'Marshalls','Favorability & Feeling','Brand Impact','Brand Favorability','+3 to +6pp lift','Content/Site Engagement','N/A'
+'Marshalls','Favorability & Feeling','Brand Impact','Perception Shift','+2 to +6pp lift','Content/Site Engagement','N/A'
+'Marshalls','Feeling & Fervor','Buzz & Cultural Impact','Brand Relevance','+3 to 6pp lift','Influencer Engagement','Social Conversation & Sentiment'
+'Marshalls','Feeling & Fervor','Buzz & Cultural Impact','Brand Relevance','+3 to 6pp lift','Organic Social Engagement','Social Conversation & Sentiment'
+'Marshalls','Fascination & Following','Customer Growth','New Customers/Loyalty Members','+3 to 5% Annual Growth','New Customer Files','Store Visits'
+'Marshalls','Findability & Facilitation','Market Share','Share Growth','+1 to 2% Annual Growth','Competitor Store Visits','Competitor Branded Search Volume'
+'Marshalls','Findability & Facilitation','Sales','Online & Offline Sales/ROAS','$3 to $8 Avg ROAS','Cost per Sale Conversion','Branded Search Trends'
+'Marshalls','Findability & Facilitation','Store Traffic','Store Visits','2M+ per Week','Cost per Store Visit','Branded Search Trends'
+'Marshalls','Findability & Facilitation','Online Traffic','Site Visits','10M+ per Week','Cost per Site Visit','Site Analytics Pageviews'
+'HomeGoods','Familiarity','TOMA','Ad Awareness','+6 to +12pp lift','Attention','Weekly Reach & Frequency'
+'HomeGoods','Familiarity','TOMA','Unaided Brand Awareness','+1 to +4pp lift','Attention','N/A'
+'HomeGoods','Favorability & Feeling','Brand Impact','Brand Consideraton','+4 to +8pp lift','Content/Site Engagement','N/A'
+'HomeGoods','Favorability & Feeling','Brand Impact','Brand Favorability','+3 to +6pp lift','Content/Site Engagement','N/A'
+'HomeGoods','Favorability & Feeling','Brand Impact','Perception Shift','+2 to +6pp lift','Content/Site Engagement','N/A'
+'HomeGoods','Feeling & Fervor','Buzz & Cultural Impact','Brand Relevance','+3 to 6pp lift','Influencer Engagement','Social Conversation & Sentiment'
+'HomeGoods','Feeling & Fervor','Buzz & Cultural Impact','Brand Relevance','+3 to 6pp lift','Organic Social Engagement','Social Conversation & Sentiment'
+'HomeGoods','Fascination & Following','Customer Growth','New Customers/Loyalty Members','+3 to 5% Annual Growth','New Customer Files','Store Visits'
+'HomeGoods','Findability & Facilitation','Market Share','Share Growth','+1 to 2% Annual Growth','Competitor Store Visits','Competitor Branded Search Volume'
+'HomeGoods','Findability & Facilitation','Sales','Online & Offline Sales/ROAS','$3 to $8 Avg ROAS','Cost per Sale Conversion','Branded Search Trends'
+'HomeGoods','Findability & Facilitation','Store Traffic','Store Visits','2M+ per Week','Cost per Store Visit','Branded Search Trends'
+'HomeGoods','Findability & Facilitation','Online Traffic','Site Visits','10M+ per Week','Cost per Site Visit','Site Analytics Pageviews'
+'Sierra','Familiarity','TOMA','Ad Awareness','+6 to +12pp lift','Attention','Weekly Reach & Frequency'
+'Sierra','Familiarity','TOMA','Unaided Brand Awareness','+1 to +4pp lift','Attention','N/A'
+'Sierra','Favorability & Feeling','Brand Impact','Brand Consideraton','+4 to +8pp lift','Content/Site Engagement','N/A'
+'Sierra','Favorability & Feeling','Brand Impact','Brand Favorability','+3 to +6pp lift','Content/Site Engagement','N/A'
+'Sierra','Favorability & Feeling','Brand Impact','Perception Shift','+2 to +6pp lift','Content/Site Engagement','N/A'
+'Sierra','Feeling & Fervor','Buzz & Cultural Impact','Brand Relevance','+3 to 6pp lift','Influencer Engagement','Social Conversation & Sentiment'
+'Sierra','Feeling & Fervor','Buzz & Cultural Impact','Brand Relevance','+3 to 6pp lift','Organic Social Engagement','Social Conversation & Sentiment'
+'Sierra','Fascination & Following','Customer Growth','New Customers/Loyalty Members','+3 to 5% Annual Growth','New Customer Files','Store Visits'
+'Sierra','Findability & Facilitation','Market Share','Share Growth','+1 to 2% Annual Growth','Competitor Store Visits','Competitor Branded Search Volume'
+'Sierra','Findability & Facilitation','Sales','Online & Offline Sales/ROAS','$3 to $8 Avg ROAS','Cost per Sale Conversion','Branded Search Trends'
+'Sierra','Findability & Facilitation','Store Traffic','Store Visits','2M+ per Week','Cost per Store Visit','Branded Search Trends'
+'Sierra','Findability & Facilitation','Online Traffic','Site Visits','10M+ per Week','Cost per Site Visit','Site Analytics Pageviews'`;
 
-        // Data sources CSV string
-        const dataSourcesCsvString = `Metric,Data Source
+        // Data sources CSV string - UPDATED
+        const dataSourcesCsvString = `'Metric','Data Source'
 'Ad Awareness','Brand Lift Study/YouGov'
 'Unaided Brand Awareness','Brand Lift Study/YouGov'
 'Brand Consideraton','Brand Lift Study/YouGov'
@@ -313,13 +308,11 @@
 'Competitor Store Visits','Acxiom Location Tracking'
 'Cost per Sale Conversion','CM360'
 'Cost per Site Visit','CM360'
-'Cost per Store Visit','Acxiom Location Tracking'
 'Weekly Reach & Frequency','CM360/NielsenOne x Acxiom'
 'Social Conversation & Sentiment','Quid Netbase/Pulsar'
 'Competitor Branded Search Volume','Google Trends'
 'Branded Search Trends','Google Trends'
-'Site Analytics Pageviews','Adobe Analytics/Google Analytics'
-`;
+'Site Analytics Pageviews','Adobe/Google Analytics'`;
 
         let dataSourcesMap = new Map();
         let allData = []; 
@@ -329,21 +322,25 @@
             "Marshalls": { 
                 pageTitleColor: "#0056b3", buttonBg: "#007bff", buttonHoverBg: "#0056b3", 
                 tableBrandHeaderBgDark: "#004085", tableBrandHeaderText: "#ffffff", 
+                tableFameFlowRowBg: "#b8daff", tableFameFlowRowText: "#003063", 
                 tableObjectiveRowBg: "#cfe2ff", tableObjectiveRowText: "#004085" 
             },
             "HomeGoods": { 
                 pageTitleColor: "#c82333", buttonBg: "#dc3545", buttonHoverBg: "#c82333", 
                 tableBrandHeaderBgDark: "#a71d2a", tableBrandHeaderText: "#ffffff", 
+                tableFameFlowRowBg: "#f5c6cb", tableFameFlowRowText: "#651219", 
                 tableObjectiveRowBg: "#f8d7da", tableObjectiveRowText: "#721c24" 
             },
             "Sierra": { 
                 pageTitleColor: "#cca300", buttonBg: "#ffc107", buttonHoverBg: "#e0a800", 
                 tableBrandHeaderBgDark: "#b38f00", tableBrandHeaderText: "#ffffff", 
+                tableFameFlowRowBg: "#ffeeba", tableFameFlowRowText: "#7a5900", 
                 tableObjectiveRowBg: "#fff3cd", tableObjectiveRowText: "#856404" 
             },
             "default": { 
                 pageTitleColor: "#333", buttonBg: "#007bff", buttonHoverBg: "#0056b3", 
                 tableBrandHeaderBgDark: "#5a6268", tableBrandHeaderText: "#ffffff", 
+                tableFameFlowRowBg: "#d6d8db", tableFameFlowRowText: "#343a40", 
                 tableObjectiveRowBg: "#e9ecef", tableObjectiveRowText: "#495057" 
             }
         };
@@ -364,6 +361,11 @@
                 existingTableBrandHeader.style.backgroundColor = theme.tableBrandHeaderBgDark;
                 existingTableBrandHeader.style.color = theme.tableBrandHeaderText;
             }
+            const fameFlowDataRows = document.querySelectorAll('#table-container .fame-flow-data-row td:not(.metric-label)');
+            fameFlowDataRows.forEach(cell => {
+                cell.style.backgroundColor = theme.tableFameFlowRowBg;
+                cell.style.color = theme.tableFameFlowRowText;
+            });
             const objectiveDataRows = document.querySelectorAll('#table-container .objective-data-row td:not(.metric-label)');
              objectiveDataRows.forEach(cell => {
                 cell.style.backgroundColor = theme.tableObjectiveRowBg;
@@ -412,6 +414,7 @@
             const records = [];
             const headerMap = {
                 brand: headers.indexOf('Brand'),
+                fameAndFlow: headers.indexOf('Fame & Flow'), 
                 objective: headers.indexOf('Objective'),
                 primaryKPI: headers.indexOf('Primary KPI'),
                 benchmark: headers.indexOf('Benchmark'),
@@ -419,8 +422,8 @@
                 diagnosticMetric: headers.indexOf('Diagnostic & Monitoring Metric')
             };
 
-            if (Object.values(headerMap).some(index => index === -1)) {
-                console.error("Framework CSV parsing error: One or more key headers are missing. Parsed headers:", headers, "HeaderMap indices:", headerMap); 
+            if (Object.values(headerMap).some(index => index === -1) || headerMap.fameAndFlow === -1) {
+                console.error("Framework CSV parsing error: One or more key headers are missing (ensure 'Fame & Flow' is present). Parsed headers:", headers, "HeaderMap indices:", headerMap); 
                 alert("Error: Core CSV headers are missing in the framework data. Cannot generate the framework.");
                 return [];
             }
@@ -434,6 +437,7 @@
                 if (values.length >= headers.length) { 
                     const record = {
                         brand: values[headerMap.brand], 
+                        fameAndFlow: values[headerMap.fameAndFlow], 
                         objective: values[headerMap.objective],
                         primaryKPI: values[headerMap.primaryKPI], 
                         benchmark: values[headerMap.benchmark],
@@ -482,7 +486,7 @@
             let parsedData = parseFrameworkData(frameworkCsvDataString);
             const uniqueDataStrings = new Set();
             allData = parsedData.filter(item => {
-                const itemString = `${item.brand}|${item.objective}|${item.primaryKPI}|${item.benchmark}|${item.optimizationProxy}|${item.diagnosticMetric}`;
+                const itemString = `${item.brand}|${item.fameAndFlow}|${item.objective}|${item.primaryKPI}|${item.benchmark}|${item.optimizationProxy}|${item.diagnosticMetric}`;
                 if (uniqueDataStrings.has(itemString)) {
                     return false;
                 }
@@ -653,7 +657,6 @@
         function processBufferedCells(trData, buffer, dataSourcesMap, dataSourceToNumberMap, footnoteItems, nextFootnoteNumberRef, applyDarkBorderToLast) {
             if (buffer.length === 0) return;
             let i = 0;
-            let createdCellsCount = 0;
             while (i < buffer.length) {
                 let currentValue = buffer[i].value; 
                 let count = 1;
@@ -666,12 +669,12 @@
                 td.innerHTML = getMetricHTMLWithFootnote(currentValue, dataSourcesMap, dataSourceToNumberMap, footnoteItems, nextFootnoteNumberRef);
                 td.colSpan = count;
                 
-                // Apply dark border if this is the last cell being created from this buffer AND the flag is true
-                if (applyDarkBorderToLast && j === buffer.length) {
+                // applyDarkBorderToLast is a boolean indicating if the *objective group* this buffer belongs to is the last one.
+                // The border should be applied if this cell is the last for its buffer AND its objective group is NOT the overall last.
+                if (applyDarkBorderToLast) { // This means the objective group is NOT the overall last.
                      td.classList.add('objective-divider-right');
                 }
                 trData.appendChild(td);
-                createdCellsCount++;
                 i = j; 
             }
         }
@@ -707,6 +710,7 @@
                     itemsForObjective.forEach(item => {
                         finalColumns.push({
                             objectiveName: objName,
+                            fameAndFlowValue: item.fameAndFlow, 
                             primaryKPIValue: item.primaryKPI, 
                             dataItem: item 
                         });
@@ -741,11 +745,13 @@
             table.appendChild(thead); 
 
             // TBODY: Data Rows
-            const rowLabels = ["Objective", "Primary KPI", "Benchmark(s)", "Optimization Proxy", "Diagnostic & Monitoring Metric"];
+            const rowLabels = ["Fame & Flow", "Objective", "Primary KPI", "Benchmark(s)", "Optimization Proxy", "Diagnostic & Monitoring Metric"];
             
             rowLabels.forEach((labelName) => {
                 let trData = document.createElement('tr');
-                if (labelName === "Objective") {
+                if (labelName === "Fame & Flow") {
+                    trData.classList.add('fame-flow-data-row'); 
+                } else if (labelName === "Objective") {
                     trData.classList.add('objective-data-row'); 
                 }
                 let tdLabel = document.createElement('td');
@@ -753,51 +759,66 @@
                 tdLabel.classList.add('metric-label');
                 trData.appendChild(tdLabel);
 
-                if (labelName === "Objective") {
-                    let currentObjectiveName = null;
-                    let colspanCount = 0;
-                    let objectiveIndex = -1;
-                    const uniqueObjectivesInTableOrder = [];
-                    finalColumns.forEach(col => {
-                        if (!uniqueObjectivesInTableOrder.includes(col.objectiveName)) {
-                            uniqueObjectivesInTableOrder.push(col.objectiveName);
-                        }
-                    });
+                if (labelName === "Fame & Flow" || labelName === "Objective") {
+                    if (finalColumns.length > 0) {
+                        let currentGroupDisplayValue = null;
+                        let currentGroupColspan = 0;
+                        
+                        // Determine the distinct groups and their order based on finalColumns for the current row type (F&F or Objective)
+                        let distinctGroupsInOrder = [];
+                        finalColumns.forEach(col => {
+                            const groupVal = labelName === "Fame & Flow" ? col.fameAndFlowValue : col.objectiveName;
+                            if (distinctGroupsInOrder.length === 0 || distinctGroupsInOrder[distinctGroupsInOrder.length - 1] !== groupVal) {
+                                distinctGroupsInOrder.push(groupVal);
+                            }
+                        });
 
+                        for (let i = 0; i < finalColumns.length; i++) {
+                            const col = finalColumns[i];
+                            const colDisplayValue = labelName === "Fame & Flow" ? col.fameAndFlowValue : col.objectiveName;
 
-                    for (let i = 0; i < finalColumns.length; i++) {
-                        const col = finalColumns[i];
-                        if (currentObjectiveName === null) {
-                            currentObjectiveName = col.objectiveName;
-                            objectiveIndex = uniqueObjectivesInTableOrder.indexOf(currentObjectiveName);
+                            if (currentGroupDisplayValue === null) {
+                                currentGroupDisplayValue = colDisplayValue;
+                            }
+
+                            if (colDisplayValue === currentGroupDisplayValue) {
+                                currentGroupColspan++;
+                            } else {
+                                const td = document.createElement('td');
+                                td.textContent = currentGroupDisplayValue;
+                                td.colSpan = currentGroupColspan;
+                                if (labelName === "Fame & Flow") {
+                                    td.style.backgroundColor = currentTheme.tableFameFlowRowBg;
+                                    td.style.color = currentTheme.tableFameFlowRowText;
+                                } else {
+                                    td.style.backgroundColor = currentTheme.tableObjectiveRowBg;
+                                    td.style.color = currentTheme.tableObjectiveRowText;
+                                }
+                                
+                                const indexOfCurrentGroup = distinctGroupsInOrder.indexOf(currentGroupDisplayValue);
+                                if (indexOfCurrentGroup < distinctGroupsInOrder.length - 1) {
+                                     td.classList.add('objective-divider-right');
+                                }
+                                trData.appendChild(td);
+                                
+                                currentGroupDisplayValue = colDisplayValue;
+                                currentGroupColspan = 1;
+                            }
                         }
-                        if (col.objectiveName === currentObjectiveName) {
-                            colspanCount++;
-                        } else {
+                        // Append the last group
+                        if (currentGroupDisplayValue !== null) {
                             const td = document.createElement('td');
-                            td.textContent = currentObjectiveName;
-                            td.colSpan = colspanCount;
-                            td.style.backgroundColor = currentTheme.tableObjectiveRowBg; 
-                            td.style.color = currentTheme.tableObjectiveRowText;
-                            if (objectiveIndex < uniqueObjectivesInTableOrder.length - 1) {
-                                td.classList.add('objective-divider-right');
+                            td.textContent = currentGroupDisplayValue;
+                            td.colSpan = currentGroupColspan;
+                             if (labelName === "Fame & Flow") {
+                                td.style.backgroundColor = currentTheme.tableFameFlowRowBg;
+                                td.style.color = currentTheme.tableFameFlowRowText;
+                            } else {
+                                td.style.backgroundColor = currentTheme.tableObjectiveRowBg;
+                                td.style.color = currentTheme.tableObjectiveRowText;
                             }
                             trData.appendChild(td);
-                            currentObjectiveName = col.objectiveName;
-                            objectiveIndex = uniqueObjectivesInTableOrder.indexOf(currentObjectiveName);
-                            colspanCount = 1;
                         }
-                    }
-                    if (currentObjectiveName !== null) {
-                        const td = document.createElement('td');
-                        td.textContent = currentObjectiveName;
-                        td.colSpan = colspanCount;
-                        td.style.backgroundColor = currentTheme.tableObjectiveRowBg; 
-                        td.style.color = currentTheme.tableObjectiveRowText;
-                         if (objectiveIndex < uniqueObjectivesInTableOrder.length - 1) {
-                            td.classList.add('objective-divider-right');
-                        }
-                        trData.appendChild(td);
                     }
                 } else if (labelName === "Primary KPI" || labelName === "Benchmark(s)") {
                     for (let i = 0; i < finalColumns.length; i++) {
@@ -807,9 +828,11 @@
                         td.innerHTML = getMetricHTMLWithFootnote(metricValue, dataSourcesMap, dataSourceToNumberMap, footnoteItems, nextFootnoteNumberRef);
                         
                         const isLastKpiForThisObjective = (i === finalColumns.length - 1) || (finalColumns[i].objectiveName !== finalColumns[i+1].objectiveName);
-                        const uniqueObjectivesInTableOrder = [];
-                        finalColumns.forEach(fc => {if (!uniqueObjectivesInTableOrder.includes(fc.objectiveName)) uniqueObjectivesInTableOrder.push(fc.objectiveName);});
-                        const isOverallLastObjectiveGroup = (uniqueObjectivesInTableOrder.indexOf(col.objectiveName) === uniqueObjectivesInTableOrder.length - 1);
+                        
+                        // Determine if the current column's objective is the last distinct objective in the table
+                        let distinctObjectivesInTableOrder = [];
+                        finalColumns.forEach(fc => {if (!distinctObjectivesInTableOrder.includes(fc.objectiveName)) distinctObjectivesInTableOrder.push(fc.objectiveName);});
+                        const isOverallLastObjectiveGroup = (distinctObjectivesInTableOrder.indexOf(col.objectiveName) === distinctObjectivesInTableOrder.length - 1);
 
                         if (isLastKpiForThisObjective && !isOverallLastObjectiveGroup) {
                             td.classList.add('objective-divider-right');
@@ -820,16 +843,17 @@
                     let dataKey = (labelName === "Optimization Proxy") ? "optimizationProxy" : "diagnosticMetric";
                     let currentObjectiveProcessing = null; 
                     let cellBufferForCurrentObjective = []; 
-                    const uniqueObjectivesInTableOrder = [];
-                    finalColumns.forEach(fc => {if (!uniqueObjectivesInTableOrder.includes(fc.objectiveName)) uniqueObjectivesInTableOrder.push(fc.objectiveName);});
+                    
+                    let distinctObjectivesInTableOrder = [];
+                    finalColumns.forEach(fc => {if (!distinctObjectivesInTableOrder.includes(fc.objectiveName)) distinctObjectivesInTableOrder.push(fc.objectiveName);});
 
                     for (let i = 0; i < finalColumns.length; i++) {
                         const col = finalColumns[i];
                         const item = col.dataItem;
                         
                         if (col.objectiveName !== currentObjectiveProcessing && currentObjectiveProcessing !== null) {
-                            const isCurrentGroupTheOverallLast = (uniqueObjectivesInTableOrder.indexOf(currentObjectiveProcessing) === uniqueObjectivesInTableOrder.length - 1);
-                            processBufferedCells(trData, cellBufferForCurrentObjective, dataSourcesMap, dataSourceToNumberMap, footnoteItems, nextFootnoteNumberRef, !isCurrentGroupTheOverallLast); 
+                            const isCurrentObjectiveGroupTheLastInTable = (distinctObjectivesInTableOrder.indexOf(currentObjectiveProcessing) === distinctObjectivesInTableOrder.length - 1);
+                            processBufferedCells(trData, cellBufferForCurrentObjective, dataSourcesMap, dataSourceToNumberMap, footnoteItems, nextFootnoteNumberRef, !isCurrentObjectiveGroupTheLastInTable); 
                             cellBufferForCurrentObjective = []; 
                         }
                         currentObjectiveProcessing = col.objectiveName; 
@@ -840,8 +864,8 @@
                         cellBufferForCurrentObjective.push({ value: metricValue });
                     }
                     if (cellBufferForCurrentObjective.length > 0) {
-                        const isCurrentGroupTheOverallLast = (uniqueObjectivesInTableOrder.indexOf(currentObjectiveProcessing) === uniqueObjectivesInTableOrder.length - 1);
-                        processBufferedCells(trData, cellBufferForCurrentObjective, dataSourcesMap, dataSourceToNumberMap, footnoteItems, nextFootnoteNumberRef, !isCurrentGroupTheOverallLast);
+                         const isCurrentObjectiveGroupTheLastInTable = (distinctObjectivesInTableOrder.indexOf(currentObjectiveProcessing) === distinctObjectivesInTableOrder.length - 1);
+                        processBufferedCells(trData, cellBufferForCurrentObjective, dataSourcesMap, dataSourceToNumberMap, footnoteItems, nextFootnoteNumberRef, !isCurrentObjectiveGroupTheLastInTable);
                     }
                 }
                 tbody.appendChild(trData);
